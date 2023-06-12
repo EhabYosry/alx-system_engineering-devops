@@ -1,0 +1,2 @@
+#!/bin/bash
+while IFS=$'\t' read -r host _; do echo "$host"; done < "$1" | sort | uniq -c | sort -nr | head -n11 | while read -r count host; do echo "$host $count"; done
